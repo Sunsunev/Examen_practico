@@ -12,7 +12,7 @@ body {
     
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto 1fr ;
-    height: 100vh;
+   max-height: 100vh;
     width: 100%;
     grid-template-areas:
         "span1 "
@@ -22,6 +22,8 @@ body {
         "content-timer"
         "imgs "
         "novedades"
+        "categorias"
+        "promo-grid"
     ;
     padding-bottom: 0px;
     padding-top: 0px;
@@ -70,11 +72,6 @@ body {
     margin: 0px;
 }
 
-.content-timer {
-    grid-area: content-timer;
-    padding: 0px;
-    margin: 0px;
-}
 .imgs {
     grid-area: imgs;
     padding: 0px;
@@ -84,10 +81,13 @@ body {
     gap: 90px;
     align-items: center;
     justify-content: center;
-    width: auto;
+    max-width: 100%;;
     height: auto;
+    overflow-x: hidden;
+    
     
 }
+
 
 .novedades {
     grid-area: novedades;
@@ -95,9 +95,103 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: row;
-    gap: 90px;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
     width: auto;
     height: auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .imgs {
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    flex-direction: row;
+    gap: 50px; 
+  }
+  .imgs img {
+  max-width: 70px;
+  height: auto;   
+  display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .imgs {
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 15px;
+  }
+  .imgs img {
+  max-width: 70px;
+  height: auto;
+  display: block;
+  }
+}
+
+
+.categorias {
+    grid-area: categorias;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #007bff; 
+  overflow-x: auto;       
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.categorias a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  flex-shrink: 0;       
+}
+
+.promo-grid {
+    grid-area: promo-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.promo-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.promo-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.promo-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.promo-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
