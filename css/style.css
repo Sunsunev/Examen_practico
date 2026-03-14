@@ -3,34 +3,22 @@
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
-.Container {
+.Container1 {
     display: grid;
-    
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto 1fr ;
+    grid-template-rows: auto auto auto auto auto auto auto;
     height: 100vh;
     width: 100%;
-    grid-template-areas:
-        "span1 "
-        "navbar"
-        "Span2"
-        "content-principal"
-        "content-timer"
-        "imgs "
-        "novedades"
-    ;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    
+    grid-template-areas: "span1" "navbar" "Span2" "content-principal" "content-timer" "imgs" "novedades";
 }
 
 .span1 {
     grid-area: span1;
-    background-color: rgb(89, 150, 230);
+    background-color: #1786fd;
     color: white;
     display: flex;
     justify-content: center;
@@ -38,22 +26,32 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0px;
     margin: 0px;
-
-
 }
 
 .navbar-container2 {
     grid-area: navbar;
+    background-color: rgba(248, 248, 248, 0.877);
+    color: #000000;
     padding: 0px;
     margin: 0px;
-
-
+    font-weight: 500;
 }
 
-.Span2 {
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+}
 
+.navbar-brand img {
+    width: 200px;
+    width: 100px;
+}
+
+.span2 {
     grid-area: Span2;
-    background-color: rgb(89, 150, 230);
+    background-color: #1786fd;
     color: white;
     display: flex;
     justify-content: center;
@@ -66,19 +64,27 @@ body {
 
 .content-principal {
     grid-area: content-principal;
-    padding: 0px;
-    margin: 0px;
 }
 
 .content-timer {
     grid-area: content-timer;
-    padding: 0px;
-    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
 }
+
+.content-timer img {
+    border-radius: 30px;
+}
+
 .imgs {
     grid-area: imgs;
-    padding: 0px;
-    margin: 0px;
     display: flex;
     flex-direction: row;
     gap: 90px;
@@ -86,7 +92,14 @@ body {
     justify-content: center;
     width: auto;
     height: auto;
-    
+}
+
+.imgs img {
+    width: 70px;
+}
+
+.item {
+    text-align: center;
 }
 
 .novedades {
@@ -95,9 +108,252 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: row;
-    gap: 90px;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
     width: auto;
     height: auto;
+    white-space: nowrap;
+}
+
+.categorias {
+    grid-area: categorias;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #1786fd;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    flex-shrink: 0;
+}
+
+.promo-grid {
+    grid-area: promo-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.promo-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.promo-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.promo-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.promo-card button {
+    background-color: #1786fd;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+}
+
+.preference {
+    grid-area: novedades;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    width: 250px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card-img {
+    width: 70%;
+    max-width: 200px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #1786fd;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #2d3f8f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating img {
+    max-width: 70%;
+    height: auto;
+}
+
+.price {
+    margin-bottom: 10px;
+}
+
+.current-price {
+    color: #2a7de1;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.colors {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.white {
+    background: white;
+}
+
+.black {
+    background: black;
+}
+
+.purple {
+    background: #6d6d8f;
+}
+
+.blue {
+    background: #a5bbc7;
+}
+
+.sky-blue {
+    background: #3085b3;
+}
+
+.sea-blue {
+    background: #527d94;
+}
+
+.installments {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.footer {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+@media (max-width:768px) {
+    .imgs {
+        justify-content: center;
+        gap: 30px;
+    }
+    .imgs img {
+        max-width: 70px;
+        height: auto;
+    }
+}
+
+@media (max-width:480px) {
+    .imgs {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .imgs img {
+        max-width: 60px;
+    }
 }
